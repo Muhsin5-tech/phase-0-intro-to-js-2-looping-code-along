@@ -1,28 +1,21 @@
 function writeCards(names, event) {
-    // Create a new, empty array to hold the messages
-    const messages = [];
-    
-    // Iterate through the input array
-    for (let i = 0; i < names.length; i++) {
-        // Build the 'thank you' message for each name
-        const message = `Thank you, ${names[i]}, for the wonderful ${event} gift!`;
-        // Add the message to the messages array
-        messages.push(message);
-    }
-    
-    // Return the new array of messages
-    return messages;
+  let thankYouMessages = [];
+  
+  for (let i = 0; i < names.length; i++) {
+      thankYouMessages.push(`Thank you, ${names[i]}, for the wonderful ${event} gift!`);
+  }
+  
+  return thankYouMessages;
 }
 
-// Example usage:
-const namesArray = ["Alice", "Bob", "Charlie"];
-const eventName = "birthday";
-console.log(writeCards(namesArray, eventName));
-
-function countDown() {
-    let count = 10; 
-    while (count >= 0) { 
-      console.log(count--);
-    }
+function countDown(number) {
+  while (number >= 0) {
+      console.log(number);
+      number--;
   }
-  countDown()
+}
+
+const messages = writeCards(["Charlie", "Samip", "Ali"], "birthday");
+console.log(messages);
+
+countDown(10);
